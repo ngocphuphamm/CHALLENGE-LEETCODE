@@ -14,10 +14,21 @@ public class App {
             nums[i]=  nums[i] * nums[i];
             
         }
-       sort(nums);
-        
-        
-       return nums;
+        for(int k = 0 ; k< nums.length;k++)
+        {
+            for(int j = k+1 ;  j < nums.length; j++)
+            {
+                int swap = 0; 
+                if(nums[k]>nums[j])
+                {
+                    swap = nums[k];
+                    nums[k] =  nums[j];
+                    nums[j] = swap;
+                }
+            }
+        }
+    
+      return nums;
      
     }
     public static void main(String[] args) throws Exception {
