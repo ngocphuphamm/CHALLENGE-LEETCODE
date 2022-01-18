@@ -1,25 +1,31 @@
 public class App {
     // https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3259/
     public static int[] replaceElements(int[] arr) {
-        int n = arr.length - 1 ;
-        for(int i = n; i >= 0 ; i-- )
+        int n = arr.length ;
+        for(int i = n-1; i >= 0 ; i-- )
         {
-            if(i == n)
+            if(i == n-1)
             {
 
             }
             else
             {
                 arr[i] = Math.max(arr[i],arr[i+1]);
-                
+
             }    
           }
-        // rut lai 
+        // rút lại mảng  
         for(int i = 1 ; i < n ; i++ )
         {
             arr[i-1] = arr[i];
         }
+        //cho phẩn tử cuối -1 
+        if(n > 0)
+        {
+            arr[n-1] =  -1;
+        }
         return arr ; 
+    
 
     }
     public static void main(String[] args) throws Exception {
