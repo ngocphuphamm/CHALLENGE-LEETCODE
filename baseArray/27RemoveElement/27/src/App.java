@@ -23,6 +23,20 @@ public class App {
         }
         return n;   
     }
+    // ky thuat su dung 2 con tro 
+    public static int removeElement2(int[] nums, int val){
+        int k = 0 ;
+        for(int i = 0; i < nums.length; i++)
+        {
+            if(nums[i] != val)
+            {
+                nums[k] = nums[i];
+                k++;
+            }
+      
+        }
+        return k ;
+    }
     public static void main(String[] args) throws Exception {
         int [] nums = new int []{1,2,3,4,2 };
         int  n = removeElement(nums,3);
