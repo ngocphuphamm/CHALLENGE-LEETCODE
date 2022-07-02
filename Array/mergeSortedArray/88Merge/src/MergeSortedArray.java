@@ -17,6 +17,10 @@ public class MergeSortedArray {
             insertElementArray(array2[i],array1,m);
             m++;
        }
+       for(int i = 0; i < array1.length; i++)
+       {
+            System.out.println(array1[i]);
+       }
     }
     void insertElementArray(int el,int arr [],int m)
     {
