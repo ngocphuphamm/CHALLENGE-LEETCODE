@@ -8,6 +8,6 @@ public class App {
         myBST.mRoot = myBST.insert(myBST.mRoot,1);
         myBST.mRoot = myBST.insert(myBST.mRoot,6);
 
-
+        myBST.deleteNode(myBST.mRoot,1);
     }
 }

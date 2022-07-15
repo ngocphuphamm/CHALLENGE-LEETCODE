@@ -85,4 +85,67 @@ public class MyBinarySearchTree {
         return rootNode;
     }
 
+    // xoa node key trong cay root 
+    // return cay moi da duoc xoa node ; 
+     
+    public TreeNode deleteNode(TreeNode root , int key)
+    {
+        if(root == null)
+        {
+            return null;
+        }
+        // b1 : di tim node xoa 
+        if(key < root.val)
+        {
+            root.left = deleteNode(root.left, key);
+            
+        }
+        else if(key > root.val)
+        {
+            root.right =deleteNode(root.right, key);
+        }
+        // b2 : xoa node 
+        else // root.val == key => xoa root
+        {
+            // TH1  ROOT LA NODE LEAF 
+            if(root.left == null && root.right == null)
+            {
+                return null;
+            }
+            // TH2 : Chi co 1 con ben trai 
+            if (root.left != null && root.right == null) 
+            {
+                return root.left;
+            }
+            if(root.left == null && root.right != null)
+            {
+                return root.right;
+            }
+            // TH3 : TON TAI 2 CON 
+            // Tim node trai cung cua cay con ben phai 
+            TreeNode leftModeNode = findLeftModeNode(root.right);
+            root.val = leftModeNode.val;
+            // xoa phan tu con du sau khi dich chuyen
+            root.right = deleteNode(root.right,leftModeNode.val);
+        }
+        return root;
+    }
+    // tim node con trai cung
+    public TreeNode findLeftModeNode(TreeNode root)
+    {
+        if(root == null)
+        {
+            return null;
+        }
+        else
+        {
+            TreeNode leftMostNode = root;
+            while(leftMostNode.left != null)
+            {
+                leftMostNode = leftMostNode.left;
+            }
+            return leftMostNode;
+        }
+    }
 }
+ 
