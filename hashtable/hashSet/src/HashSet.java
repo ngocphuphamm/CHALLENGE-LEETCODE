@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+// KIEM TRA SU TON  CUA MOT GIA TRI TRONG MAP 
 
 public class HashSet {
     private final int SIZE = 1000;
