@@ -147,5 +147,36 @@ public class MyBinarySearchTree {
             return leftMostNode;
         }
     }
+
+    public TreeNode searchBST(TreeNode root , int key)
+    {
+        if(root == null)
+            return null;
+        if(key < root.val)
+        {
+            return searchBST(root.left,key);
+        }
+        else if(key > root.val)
+        {
+            return searchBST(root.right,key);
+        }
+        else
+        {
+            return root;
+        }
+
+    }
+
+    //NODE - L -R 
+    public void PreOder(TreeNode currNode)
+    {
+        if(currNode == null) return ;
+        // Duyet curnode truoc
+        System.out.print(currNode.val  + " ");
+        // Duyet Ben trai 
+        PreOder(currNode.left);
+        PreOder(currNode.right);
+    }
+
 }
  
