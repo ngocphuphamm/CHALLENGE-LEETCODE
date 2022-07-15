@@ -48,4 +48,41 @@ public class MyBinarySearchTree {
             return root;
         }
     }
+
+
+    public TreeNode insertRecursionBST(TreeNode rootNode , int value)
+    {
+        if(rootNode == null)
+        {
+            return new TreeNode(value);
+        }
+        else
+        {
+            if(value < rootNode.val)
+            {
+                if(rootNode.left == null)
+                {
+                    rootNode.left = new TreeNode(value);
+                }
+                else
+                {
+                    insertRecursionBST(rootNode.left,value);
+
+                }
+            }
+            else{
+                if(rootNode.right == null)
+                {
+                    rootNode.right = new TreeNode(value);
+                }
+                else
+                {
+                    insertRecursionBST(rootNode.right,value);
+
+                }
+            }
+        }
+        return rootNode;
+    }
+
 }
