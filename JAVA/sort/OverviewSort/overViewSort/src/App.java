@@ -36,7 +36,28 @@ public class App {
        }
        return nums;
     }
-    
+    public static int []  selecttionSort(int [] nums)
+    {
+        for(int i = 0; i < nums.length; i++)
+        {
+            int minIndex = i ;
+            for(int j = i + 1 ; j < nums.length ; j++)
+            {
+                if(nums[minIndex] > nums[j] )
+                {
+                    // tim min [i,n];
+                    minIndex = j;
+                }
+            }
+            if(minIndex != i )
+            {
+                int swap = nums[minIndex];
+                nums[minIndex] = nums[i];
+                nums[i] = swap;
+            }
+        }
+        return nums;
+    }
     public static void printArray(int [] nums)
     {
         for (int i = 0; i < nums.length; i++)
@@ -46,7 +67,7 @@ public class App {
     }
     public static void main(String[] args) throws Exception {
         int [] b = {1,2,4,6,2};
-        printArray(bubleSort(b));
+        printArray(selecttionSort(b));
         
     }
 }

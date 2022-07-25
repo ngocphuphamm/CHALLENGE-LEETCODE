@@ -22,7 +22,7 @@ public class App {
         return n = fibonacci(n-1) + fibonacci(n-2);
     }
 
-    // toi uu de quy
+    // toi uu de quyA
     // de quy co nho 
     static int [] F = new int [1000];
     public static int fibo2(int n)
